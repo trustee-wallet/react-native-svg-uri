@@ -119,6 +119,8 @@ static getDerivedStateFromProps (nextProps, prevState){
     if (nextProps.fill !== prevState.fill) {
       return nextProps.fill;
     }
+
+    return null;
   }
 
   componentWillUnmount() {
