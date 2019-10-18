@@ -1,6 +1,6 @@
 {
   "name": "react-native-svg-uri-falker",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Render an SVG Image from an URL",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "uri",
     "http"
   ],
-  "author": "Matias Cortes",
+  "author": "Matias Cortes(react-native-svg-uri)/Diego Francio (react-native-svg-uri-falker)",
   "license": "ISC",
   "dependencies": {
     "xmldom": "^0.1.22"
