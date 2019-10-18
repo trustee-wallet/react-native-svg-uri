@@ -1,6 +1,6 @@
 {
   "name": "react-native-svg-uri-falker",
-  "version": "1.3.1",
+  "version": "1.3.3",
   "description": "Render an SVG Image from an URL",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dfrancio/react-native-svg-uri.git"
+    "url": "git+https://github.com/dfrancio/react-native-svg-uri-falker.git"
   },
   "keywords": [
     "react-native",
@@ -26,9 +26,9 @@
     "react-native-svg": "^9.11.1"
   },
   "bugs": {
-    "url": "https://github.com/matiascba/react-native-svg-uri/issues"
+    "url": "https://github.com/dfrancio/react-native-svg-uri-falker/issues"
   },
-  "homepage": "https://github.com/matiascba/react-native-svg-uri#readme",
+  "homepage": "https://github.com/dfrancio/react-native-svg-uri-falker#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-preset-react-native": "^2.1.0",
