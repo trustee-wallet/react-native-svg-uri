@@ -1,5 +1,5 @@
 {
-  "name": "@dfrancio/react-native-svg-uri",
+  "name": "react-native-svg-uri-falker",
   "version": "1.3.0",
   "description": "Render an SVG Image from an URL",
   "main": "index.js",
