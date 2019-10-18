@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matiascba/react-native-svg-uri.git"
+    "url": "git+https://github.com/dfrancio/react-native-svg-uri.git"
   },
   "keywords": [
     "react-native",
