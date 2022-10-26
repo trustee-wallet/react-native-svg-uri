@@ -76,9 +76,7 @@ const COMMON_ATTS = [
   'scale',
   'origin',
   'originX',
-  'originY',
-  'transform',
-  'clipPath'
+  'originY'
 ];
 
 let ind = 0;
@@ -120,21 +118,21 @@ class SvgUri extends Component {
     this.isComponentMounted = true;
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
+  static getDerivedStateFromProps(nextProps, state) {
     if (nextProps.source) {
       const source = resolveAssetSource(nextProps.source) || {};
-      const oldSource = resolveAssetSource(prevState.source) || {};
+      const oldSource = resolveAssetSource(state.source) || {};
       if (source.uri !== oldSource.uri) {
-        return source;
+        this.fetchSVGData(source.uri);
       }
     }
 
-    if (nextProps.svgXmlData !== prevState.svgXmlData) {
-      return nextProps.svgXmlData;
+    if (nextProps.svgXmlData !== state.svgXmlData && nextProps.svgXmlData) {
+      state = { svgXmlData: nextProps.svgXmlData };
     }
 
-    if (nextProps.fill !== prevState.fill) {
-      return nextProps.fill;
+    if (nextProps.fill !== state.fill && nextProps.fill) {
+      state = { fill: nextProps.fill };
     }
 
     return null;
@@ -276,6 +274,9 @@ class SvgUri extends Component {
         );
       case 'text':
         componentAtts = this.obtainComponentAtts(node, TEXT_ATTS);
+        if (componentAtts.y) {
+          componentAtts.y = fixYPosition(componentAtts.y, node);
+        }
         return (
           <Text key={i} {...componentAtts}>
             {childs}
@@ -330,7 +331,7 @@ class SvgUri extends Component {
   inspectNode(node) {
     // Only process accepted elements
     if (!ACCEPTED_SVG_ELEMENTS.includes(node.nodeName)) {
-      return <View />;
+      return null;
     }
 
     // Process the xml node
@@ -361,9 +362,7 @@ class SvgUri extends Component {
         return null;
       }
 
-      const inputSVG = this.state.svgXmlData
-        .substring(this.state.svgXmlData.indexOf('<svg '), this.state.svgXmlData.indexOf('</svg>') + 6)
-        .replace(/<!-(.*?)->/g, '');
+      const inputSVG = this.state.svgXmlData.substring(this.state.svgXmlData.indexOf('<svg '), this.state.svgXmlData.indexOf('</svg>') + 6);
 
       const doc = new xmldom.DOMParser().parseFromString(inputSVG);
 
