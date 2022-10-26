@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https:/https://github.com/moseszhou/react-native-svg-uri.git"
+    "url": "git+https://github.com/moseszhou/react-native-svg-uri.git"
   },
   "keywords": [
     "react-native",
@@ -26,9 +26,9 @@
     "react-native-svg": "^9.11.1"
   },
   "bugs": {
-    "url": "https:/https://github.com/moseszhou/react-native-svg-uri/issues"
+    "url": "https://github.com/moseszhou/react-native-svg-uri/issues"
   },
-  "homepage": "https:/https://github.com/moseszhou/react-native-svg-uri#readme",
+  "homepage": "https://github.com/moseszhou/react-native-svg-uri#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-preset-react-native": "^2.1.0",
