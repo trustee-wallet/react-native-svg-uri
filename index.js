@@ -123,19 +123,27 @@ class SvgUri extends Component {
       const source = resolveAssetSource(nextProps.source) || {};
       const oldSource = resolveAssetSource(state.source) || {};
       if (source.uri !== oldSource.uri) {
-        this.fetchSVGData(source.uri);
+        return { source };
       }
     }
 
     if (nextProps.svgXmlData !== state.svgXmlData && nextProps.svgXmlData) {
-      state = { svgXmlData: nextProps.svgXmlData };
+      return { svgXmlData: nextProps.svgXmlData };
     }
 
     if (nextProps.fill !== state.fill && nextProps.fill) {
-      state = { fill: nextProps.fill };
+      return { fill: nextProps.fill };
     }
 
     return null;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const oldSource = resolveAssetSource(prevState.source) || {};
+    const source = resolveAssetSource(this.state.source) || {};
+    if (source.uri !== oldSource.uri) {
+      this.fetchSVGData(source.uri);
+    }
   }
 
   componentWillUnmount() {
@@ -164,7 +172,6 @@ class SvgUri extends Component {
 
     return responseXML;
   }
-
   // Remove empty strings from children array
   trimElementChilden(children) {
     for (child of children) {
