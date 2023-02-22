@@ -23,7 +23,7 @@
     "xmldom": "^0.1.22"
   },
   "peerDependencies": {
-    "react-native-svg": "^9.11.1"
+    "react-native-svg": "^13.6.0"
   },
   "bugs": {
     "url": "https://github.com/moseszhou/react-native-svg-uri/issues"
